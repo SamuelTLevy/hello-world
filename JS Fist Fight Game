@@ -10,7 +10,7 @@ while(fighting) {
     console.log("You hit him for " + yourDamage + " damage! Brutal!");
     hisHitPoints += yourDamage;
     if(hisHitPoints >= 6) {
-      console.log("You knocked him the fuck out!");
+      console.log("You knocked him the fuck out! Savage!");
       break;
     } else {
       yourPunch = Math.floor(Math.random() * 2);
