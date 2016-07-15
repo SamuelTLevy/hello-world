@@ -1,39 +1,51 @@
 var fighting = true;
 var yourPunch = Math.floor(Math.random() * 2);
 var hisPunch = Math.floor(Math.random() * 2);
-var yourDamage = Math.floor(Math.random() * 5 + 1);
-var hisDamage = Math.floor(Math.random() * 5 + 1);
+var yourDamage = Math.floor(Math.random() * 6 + 1);
+var hisDamage = Math.floor(Math.random() * 6 + 1);
 var yourHitPoints = 0;
 var hisHitPoints = 0;
 while(fighting) {
   if(yourPunch) {
-    console.log("You hit him for " + yourDamage + " damage! Brutal!");
-    hisHitPoints += yourDamage;
-    if(hisHitPoints >= 6) {
-      console.log("You knocked him the fuck out! Savage!");
+    if(yourDamage === 6) {
+      console.log("You scored a critical hit for " + yourDamage + " damage!");
+      console.log("His head is a bloody mess. GGWP.");
       break;
     } else {
-      yourPunch = Math.floor(Math.random() * 2);
-      yourDamage = Math.floor(Math.random() * 5 + 1);
+      console.log("You hit him for " + yourDamage + " damage! Brutal!");
+      hisHitPoints += yourDamage;
+      if(hisHitPoints >= 6) {
+        console.log("You knocked him the fuck out! Savage!");
+        break;
+      } else {
+        yourPunch = Math.floor(Math.random() * 2);
+        yourDamage = Math.floor(Math.random() * 6 + 1);
+      }
     }
   } else {
     console.log("You missed him!");
     yourPunch = Math.floor(Math.random() * 2);
-    yourDamage = Math.floor(Math.random() * 5 + 1);
+    yourDamage = Math.floor(Math.random() * 6 + 1);
   }
   if(hisPunch) {
-    console.log("He hit you for " + hisDamage + " damage! Ouch!");
-    yourHitPoints += hisDamage;
-    if(yourHitPoints >= 6) {
-      console.log("He knocked you the fuck out, brotato!");
+    if(hisDamage === 6) {
+      console.log("He scored a critial hit for " + hisDamage + " damage!");
+      console.log("You may not have a modeling career...");
       fighting = false;
     } else {
-      hisPunch = Math.floor(Math.random() * 2);
-      hisDamage = Math.floor(Math.random() * 5 + 1);
+      console.log("He hit you for " + hisDamage + " damage! Ouch!");
+      yourHitPoints += hisDamage;
+      if(yourHitPoints >= 6) {
+        console.log("He knocked you the fuck out, brotato!");
+        fighting = false;
+      } else {
+        hisPunch = Math.floor(Math.random() * 2);
+        hisDamage = Math.floor(Math.random() * 6 + 1);
+      }
     }
   } else {
     console.log("He missed you!");
     hisPunch = Math.floor(Math.random() * 2);
-    hisDamage = Math.floor(Math.random() * 5 + 1);
+    hisDamage = Math.floor(Math.random() * 6 + 1);
   }
 }
