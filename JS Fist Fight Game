@@ -14,10 +14,12 @@ while(fighting) {
       break;
     } else {
       yourPunch = Math.floor(Math.random() * 2);
+      yourDamage = Math.floor(Math.random() * 5 + 1);
     }
   } else {
     console.log("You missed him!");
     yourPunch = Math.floor(Math.random() * 2);
+    yourDamage = Math.floor(Math.random() * 5 + 1);
   }
   if(hisPunch) {
     console.log("He hit you for " + hisDamage + " damage! Ouch!");
@@ -27,9 +29,11 @@ while(fighting) {
       fighting = false;
     } else {
       hisPunch = Math.floor(Math.random() * 2);
+      hisDamage = Math.floor(Math.random() * 5 + 1);
     }
   } else {
     console.log("He missed you!");
     hisPunch = Math.floor(Math.random() * 2);
+    hisDamage = Math.floor(Math.random() * 5 + 1);
   }
 }
